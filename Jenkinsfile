@@ -2,8 +2,10 @@ pipeline{
 	agent any
 	stages{
 		stage("build_makefile"){
-			cd build
-			cmake -G "MinGW Makefiles" ..
+			steps{	
+				cd build
+				cmake -G "MinGW Makefiles" ..
+			}
 			
 		}
 	}

@@ -14,6 +14,7 @@ pipeline{
 		
 		stage("build_exe"){
 			steps{
+				echo "Build exe"
 				dir("build"){
 					bat 'MinGW32-make'
 				}

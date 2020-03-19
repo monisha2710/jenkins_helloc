@@ -14,14 +14,17 @@ pipeline{
 		
 		stage("build_exe"){
 			steps{
-				bat 'cd build'
-				bat 'MinGW32-make'
+				dir("build"){
+					bat 'MinGW32-make'
+				}
 			}
 		}
 		
 		stage("run"){
 			steps{
-				bat 'hello_1'
+				dir("build"){
+					bat 'hello_1'
+				}
 			}
 		}
 	}
